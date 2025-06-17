@@ -116,7 +116,9 @@ for i in tqdm(range(iters_)):
 
     pyautogui.press('f3')
     time.sleep(.9)
-    tele = [ 1236 , 412 ]
+    #browfa
+    tele = [ 1236 , 410 ]
+    # tele = [ 1236 , 412 ]
     pyautogui.moveTo(tele[0]+random.randint(-1,1), tele[1]+random.randint(-1,1), duration=(.1+(random.random()/10)))
     pyautogui.click()
     time.sleep(4.5+(random.random()/5))
