@@ -8,6 +8,9 @@ from tqdm import tqdm
 
 invs_ = int(sys.argv[1])
 #180 = 3 hours!
+    #browfa
+tele = [ 920 , 375 ]
+
 karam_fish = [ 1015 , 268 ]
 karam_to_ring = [ 1032 , 429 ]
 ring_to_bank = [ 1293 , 472 ]
@@ -44,8 +47,7 @@ def run_bank():
     pyautogui.click()
     time.sleep(4+random.random()/5)
 
-    #browfa
-    tele = [ 1239 , 413 ]
+
     pyautogui.moveTo(tele[0],tele[1],.9+random.random()/2,pyautogui.easeInQuad)
     pyautogui.click()
     time.sleep(5.5+random.randint(-1,1))
@@ -61,6 +63,10 @@ def run_bank():
 
     pyautogui.press('esc')
     time.sleep(2.5+random.random()/10)
+    if random.randint(0,15) == 5 and i != 0:
+        print('Breaking 3-12')
+        time.sleep(random.randint(3,12))
+
 
 def run_back():
     pyautogui.moveTo(bank_to_ring[0],bank_to_ring[1],.7+random.random()/2,pyautogui.easeInQuad)
@@ -70,13 +76,16 @@ def run_back():
     pyautogui.moveTo(DKP[0],DKP[1],.5+random.random()/2,pyautogui.easeInQuad)
     pyautogui.click()
     time.sleep(5+random.randint(-1,1))
+    if random.randint(0,15) == 5 and i != 0:
+        print('Breaking 3-12')
+        time.sleep(random.randint(3,15))
 
     pyautogui.moveTo(tele[0],tele[1],.9+random.random()/2,pyautogui.easeInQuad)
     pyautogui.click()
     time.sleep(5.5+random.randint(-1,1))
 for i in tqdm(range(invs_)):
     tt = time.time()
-    if random.randint(0,15) == 5 and i != 0:
+    if random.randint(0,7) == 5 and i != 0:
         print('Breaking 3-12')
         time.sleep(random.randint(3,12))
 
