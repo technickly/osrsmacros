@@ -46,9 +46,10 @@ def fish():
     if random.randint(0,9) == 8:
         print('sleep 4')
         time.sleep(4 + random.random())
-    if random.randint(0,20) == 5:
+    if random.randint(0,10) == 5:
         print('sleep 15')
         time.sleep(15 + random.random())
+
     pg.moveTo(fish_spot[0]+random.randint(-3,5),fish_spot[1]+random.randint(-5,5),.2+random.random()/2,pg.easeInQuad)
     pg.click()
     time.sleep(random.randint(100,115))
@@ -82,7 +83,7 @@ def fish():
 
 
 def move_through_inv(RR,shuffle,reverse,click):
-    tween_delay = random.random()/7.5
+    tween_delay = .15+random.random()/9.5
     # IF WANT TO SHUFFLE
     if shuffle == True:
         coin_flip = random.randint(0,1)
@@ -96,7 +97,7 @@ def move_through_inv(RR,shuffle,reverse,click):
 
     for pos in RR:
         if random.randint(1,5) == 2:
-            tween_delay = random.random()/7.5
+            tween_delay = .15+random.random()/7.5
 
         move_delay = random.random()/2
         pg.moveTo(pos[0]+random.randint(-2,2),pos[1]+random.randint(-2,2),tween_delay,pg.easeInQuad)
@@ -109,6 +110,8 @@ def move_through_inv(RR,shuffle,reverse,click):
 
 for i in tqdm(range(invs)):
     t1 = time.time()
+    if i in [28,66]:
+        time.sleep(random.randint(75,100    ))
     # for k in range(random.randint(8,10)):
     fish()
     if i % 3 == 0:
