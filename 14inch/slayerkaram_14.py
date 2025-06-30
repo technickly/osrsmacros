@@ -35,7 +35,7 @@ DKP = [ 1251 , 343 ]
 def fish():
     pyautogui.moveTo(karam_fish[0]+random.randint(-1,1),karam_fish[1]+random.randint(-1,1),.5+random.random()/2.5,pyautogui.easeInQuad)
     pyautogui.click()
-    time.sleep(random.randint(110,125))
+    time.sleep(random.randint(130,145))
 
 def run_bank():
     #From fish to Ring
