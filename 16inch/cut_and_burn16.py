@@ -28,9 +28,9 @@ RR = [  _00,_01,_02,_03,
         _60,_61,_62,_63 ]
 
 
-w1 = [ 1307 , 301 ]
-w1 = pg.position()
-campfire = [ 1301 , 363 ]
+w1 = [ 1156 , 324 ]
+# w1 = pg.position()
+campfire = [ 1296 , 368 ]
 # w2 = [ 1233 , 363 ]
 
 tind = RR[0]
@@ -96,6 +96,7 @@ for i in tqdm(range(invs)):
     t1 = time.time()
     cut()
     fletch()
+    # fire()
 
     #
 
