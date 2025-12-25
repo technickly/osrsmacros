@@ -7,16 +7,20 @@ time.sleep(1.5)
 pg.click()
 #50 zoom limit north out
 
-belt = [ 1210 , 187 ]
+belt = [ 1235 , 238 ]
+bank = [ 1363 , 489 ]
+
 #7 secs
-dispenser = [ 1265 , 428 ]
+dispenser = [ 1275 , 411 ]
+
 #6
-bank2 = [ 1431 , 501 ]
+bank2 = [ 1390 , 462 ]
+
 coal = [ 1306 , 194 ]
 coal_bank = [ 1020 , 163 ]
 iron_bank = [ 1066 , 165 ]
 iron = [ 1117 , 193 ]
-bank = [ 1388 , 535 ]
+
 deposit = [ 1577 , 354 ]
 deposit_all = [ 1372 , 478 ]
 #start at bank with open
@@ -63,7 +67,7 @@ def smith():
     pg.click()
     time.sleep(3 + random.random()/3)
 
-for j in range(10):
+for j in range(1000000):
     smith()
     if random.randint(0,15) == 3:
         time.sleep(5)

@@ -7,12 +7,17 @@ time.sleep(1.5)
 pg.click()
 #50 zoom limit north out
 
-ordan = [ 1165 , 269 ]
+ordan = [ 1150 , 259 ]
+
 #7 secs
-coal = [ 1306 , 194 ]
-iron = [ 1117 , 193 ]
-bank = [ 1430 , 468 ]
-deposit = [ 1577 , 354 ]
+coal = [ 1304 , 191 ]
+
+iron = [ 1113 , 193 ]
+
+bank = [ 1441 , 476 ]
+
+deposit = [ 1578 , 353 ]
+
 #start at bank
 def buy_coal():
     pg.moveTo(ordan[0],ordan[1],.25,pg.easeInQuad)
@@ -55,16 +60,17 @@ def buy_iron():
     pg.press('esc')
     time.sleep(.8 + random.random()/3)
 
-for j in range(10):
-    for i in range(3):
+for j in range(100):
+    for i in range(2):
         buy_iron()
         buy_coal()
+
         if random.randint(0,15) == 3:
             time.sleep(3)
             print('sleep 3')
     if random.randint(0,15) == 3:
-        time.sleep(5)
-        print('sleep 5')
+        time.sleep(random.randint(8,13))
+        print('sleep 15')
 
     pg.hotkey('command','right')
     time.sleep(7 + random.random()/2)
