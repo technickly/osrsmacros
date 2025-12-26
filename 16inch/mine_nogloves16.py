@@ -28,11 +28,10 @@ RR = [  _01,_02,_03,
         _60,_61,_62,_63 ]
 
 
-iron_spot_1 = [ 883 , 350 ]
+iron_spot_1 = [1185,370]
+iron_spot_2 = [1297,265]
 
-iron_spot_2 = [ 1022 , 493 ]
-
-iron_spot_3 = [ 1033 , 185 ]
+iron_spot_3 = [1411,360]
 
 delay = 3
 def sleeper():
