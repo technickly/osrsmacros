@@ -13,14 +13,9 @@ from tqdm import tqdm
 
 # type_ = 'fin'
 # num_herbs = 700
-
-num_ = round(int(sys.argv[1])/28)
-# num_ = 3
-string = 2
-waiter = 1*(.6*27)
-
+num_herbs = int(sys.argv[2])
 # type_ = 'unf'
-# type_ = str(sys.argv[1])
+type_ = str(sys.argv[1])
 
 _00 = 1530, 350; _01 = 1575, 350; _02 = 1620, 350; _03 = 1660, 350
 _10 = 1530, 390; _11 = 1575, 390; _12 = 1620, 390; _13 = 1660, 390
@@ -40,10 +35,12 @@ RR = [  _00,_01,_02,_03,
 
 
 
-# if type_ == 'unf':
-#     waiter = 9
-# elif type_ == 'fin':
-#     waiter = 18
+num_ = math.floor(num_herbs/14)
+if type_ == 'unf':
+    waiter = 9
+elif type_ == 'fin':
+    waiter = 18
+
 # bank_loc = [ 1412 , 355 ]
 #CW FACE N ())
 # bank_loc = [ 1407 , 380 ]
@@ -60,51 +57,42 @@ noise = 1
 move_noise = .1
 
 for i in tqdm(range(num_)):
-    if random.randint(0,10) == 8:
-        time.sleep(2 + random.random()/10)
-    if random.randint(0,50) == 8:
-        time.sleep(20 + random.random()/10)
 
-    noise = random.randint(-5,5)
+# for i in range(num_):
+    noise = random.randint(-2,2)
     move_noise = random.randint(1,2)/10
 #open bank
     pg.moveTo(bank_loc[0]+noise*3,bank_loc[1]+noise*3,.5+move_noise,pg.easeInQuad)
     time.sleep(.5)
     pg.click()
-    if random.randint(0,10) == 8:
-        time.sleep(1 + random.random()/10)
-
 #deposit all
-    pg.moveTo(_01[0]+noise,_01[1]+noise,.5+move_noise,pg.easeInQuad)
+    pg.moveTo(bank_deposit[0]+noise,bank_deposit[1]+noise,.5+move_noise,pg.easeInQuad)
     time.sleep(.5)
     pg.click()
 #withdraw 14 from spot 1
-    pg.moveTo(bank_1[0]+random.randint(-1,3),bank_1[1]+random.randint(-1,3),.5+move_noise,pg.easeInQuad)
+    pg.moveTo(bank_1[0],bank_1[1],.5+move_noise,pg.easeInQuad)
     time.sleep(.5)
     pg.click()
+#withdraw 14 from spot 2
+    # pg.moveTo(bank_2[0]+noise,bank_2[1]+noise,.5+move_noise,pg.easeInQuad)
+    # time.sleep(.5)
+    # pg.click()
 #escape bank tab
     time.sleep(1)
     pg.press('esc')
-#click inv 0
-    pg.moveTo(_00[0]+noise,_00[1]+noise+random.randint(-1,3),.5+move_noise,pg.easeInQuad)
+#click inv 14
+    pg.moveTo(inv_14[0]+noise,inv_14[1]+noise,.5+move_noise,pg.easeInQuad)
     time.sleep(.5)
     pg.click()
-#click inv 1
-    pg.moveTo(_01[0]+noise,_01[1]+noise,.5+move_noise,pg.easeInQuad)
-    time.sleep(.5)
-    pg.click()
+#click inv 14
+    # pg.moveTo(inv_15[0]+noise,inv_15[1]+noise,.5+move_noise,pg.easeInQuad)
+    # time.sleep(.5)
+    # pg.click()
 #press space to make
-    time.sleep(1.5+random.random()/2)
+    time.sleep(1.5)
     pg.press('space')
-    if random.randint(0,2) == 2:
-        pg.press('space')
-
-    if random.randint(0,10) == 8:
-        time.sleep(2 + random.random()/10)
-
 # Done
-    # print('pausing')
-    time.sleep(waiter+2+random.random())
+    time.sleep(waiter)
     # pg.moveTo(bank_loc[0]+noise,bank_loc[1]+noise,.5,pg.easeInQuad)
 
 
