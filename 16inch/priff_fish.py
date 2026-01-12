@@ -31,7 +31,7 @@ fish_spot = pg.position()
 def fish():
     pg.moveTo(fish_spot[0]+random.randint(-5,5),fish_spot[1]+random.randint(-5,5),.5+random.random(),pg.easeInQuad)
     pg.click()
-    time.sleep(random.randint(100,110))
+    time.sleep(random.randint(110,120))
 
 
 def move_through_inv(RR,shuffle,reverse,click):
@@ -57,6 +57,11 @@ def move_through_inv(RR,shuffle,reverse,click):
 for i in tqdm(range(invs)):
     t1 = time.time()
     fish()
+    if random.randint(0,20) == 5 and i != 0:
+        time.sleep(random.randint(120,130))
+    if random.randint(0,10) == 5:
+        time.sleep(random.randint(3,5))
+
     if i % 3 == 0:
         move_through_inv(RR[2:],shuffle=True,reverse=True,click=True)
     # if i % 2 == 0:
