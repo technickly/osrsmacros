@@ -29,9 +29,10 @@ RR = [  _00,_01,_02,_03,
 fish_spot = pg.position()
 
 def fish():
-    pg.moveTo(fish_spot[0]+random.randint(-5,5),fish_spot[1]+random.randint(-5,5),.5+random.random(),pg.easeInQuad)
-    pg.click()
-    time.sleep(random.randint(110,120))
+    for j in range(3):
+        pg.moveTo(fish_spot[0]+random.randint(-5,5),fish_spot[1]+random.randint(-5,5),.5+random.random(),pg.easeInQuad)
+        pg.click()
+        time.sleep(random.randint(25,30))
 
 
 def move_through_inv(RR,shuffle,reverse,click):
