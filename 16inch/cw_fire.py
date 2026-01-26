@@ -10,14 +10,24 @@ from PIL import ImageGrab
 import sys
 # ick()
 
+invs_ = int(round(float(sys.argv[1])/28,1))
+print('Invs = ',invs_)
 #zoomed out, north start at anvil
 
 
 # bank = [ 1273 , 90 ]
 
-bank_bar = [ 1018 , 157 ]
-anvil = [ 1177 , 434 ]
-run_bank = [ 1417 , 288 ]
+bank_log= [ 1018 , 157 ]
+time.sleep(.5)
+fire = pg.position()
+print('move')
+time.sleep(2.2)
+bank = pg.position()
+print('done locs')
+inv_log = [ 1570 , 384 ]
+
+ # = [ 1177 , 434 ]
+# run_bank = [ 1417 , 288 ]
 
 # verztele = [ 1593 , 388 ]
 #
@@ -37,27 +47,32 @@ import pyautogui
 # from PIL import ImageGrab
 import sys
 
-def smith():
-    pg.moveTo(run_bank[0],run_bank[1],.25,pg.easeInQuad)
+def burn():
+    pg.moveTo(bank[0],bank[1],.25,pg.easeInQuad)
     pg.click()
-    time.sleep(random.randint(7,8) + random.random()/3)
-    pg.moveTo(bank_bar[0],bank_bar[1],.25,pg.easeInQuad)
+    time.sleep(random.randint(1,2) + random.random()/3)
+    pg.moveTo(bank_log[0],bank_log[1],.25,pg.easeInQuad)
     pg.click()
     time.sleep((.6*3) + random.random()/3)
     pg.press('esc')
     time.sleep(1 + random.random())
-    pg.moveTo(anvil[0],anvil[1],.25,pg.easeInQuad)
+    pg.moveTo(inv_log[0],inv_log[1],.25,pg.easeInQuad)
     pg.click()
-    time.sleep(random.randint(7,8) + random.random())
+    time.sleep(random.randint(1,2) + random.random())
+    pg.moveTo(fire[0],fire[1],.25,pg.easeInQuad)
+    pg.click()
+    time.sleep(random.randint(1,2) + random.random())
     pg.press('space')
+
     time.sleep(random.randint(58,62) + random.random())
     pg.click()
     # time.sleep((.6*3) + random.random()/3)
 
 
-for i in range(15):
-    smith()
-    # if i % 3 == 0
+for i in range(invs_):
+    burn()
+    if i % 3 == 0:
+        time.sleep(random.randint(0,2))
 
 #start at bank
 # def buy_coal():
