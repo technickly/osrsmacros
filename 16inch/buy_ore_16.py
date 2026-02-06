@@ -7,16 +7,16 @@ time.sleep(1.5)
 pg.click()
 #50 zoom limit north out
 
-ordan = [ 1150 , 259 ]
-
+saw = [ 1315 , 349 ]
+run_to = [ 1104 , 187 ]
 #7 secs
-coal = [ 1304 , 191 ]
+bank = [ 1545 , 545 ]
 
-iron = [ 1113 , 193 ]
+logs = [ 1039 , 153 ]
 
-bank = [ 1441 , 476 ]
+deposit = [ 1573 , 344 ]
 
-deposit = [ 1578 , 353 ]
+# deposit = [ 1578 , 353 ]
 
 #start at bank
 def buy_coal():
